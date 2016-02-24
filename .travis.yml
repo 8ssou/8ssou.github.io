@@ -14,7 +14,7 @@ before_install:
     - travis_retry sudo apt-get update -q
     - travis_retry sudo apt-get install cabal-install-1.20 ghc-7.8.3
     - export PATH=/opt/ghc/7.8.3/bin:/opt/cabal/1.20/bin:$PATH
-    - git submodule foreach --recursive 'git checkout master; git ls-files | grep -v README | grep -v CNAME | xarg -r git rm'
+    - git submodule foreach --recursive 'git checkout master; git ls-files | grep -v README | grep -v CNAME | xargs -r git rm'
 
 before_script:
     - git config --global user.name "$GH_NAME"
