@@ -1,0 +1,41 @@
+
+branches:
+    only:
+        - source
+
+env:
+    global:
+        - GH_NAME="8ssou.travis"
+        - secure: "zbGYRL1wZxttmLu7/fLeS/zdsB51H6RAdhmf2tOJkunLvwvB/mBjPay+rAIl9O7bFWwtnoSjJiQzo4qkB97N7jMDlV5cpCpGbMTJXiil18JXnRUKu2wPpnwLVc9UIgVBTzSCIbRWFR0NDHyw08lrgidNSnlkpGHEbEBrfsO1IHIV/67dK/ENGzsBt2yG18S0qUWJz+qqcfZKc7rJRUVXJaQPDJp0qsgv/eYH/EDCjsJtv8bmglSFN0SPWdYPyveVvyu1fwxeLly56YzqrSsySMKIIJf/mONTeBRiwiQHCikaSqdDHykPk1t27OvKTl7cekyWNlRhGdGzfYIG7vUeDc3C5RaTPeghy5R7CDJgrPvCo4H3OsLa/Joq4sklngRc0KZ6iLwmSuiwtwtZZJ38TlPQLz2a4WgN7H/BfEURBYkKJbx4JJ1YexCd+TywSN5hlvgdsFfUNnqgilqIPTKtqraWV5jdvzjMZq1DXcLcCMYLH05ttX4Fyue9e/fBB4YkIq7VGUmRxMkD0RYgvwFyJHpN5O1ERsTIIbItT02EBv6PQnaUM+dHCZh2v1WZYVuMG+kbbyevN917bxJhA/zWvQX7gDl4ZwUYnbKd5SufVglrD25lTetV0RGt8RAln33i/r6wpgxdCx6LSk78KrXRDbntY9am5H1a1YdApbR2ZIw="
+        - secure: "FU8VmkG1gR3pAyqfIPgvQs4g28F2VUhFmvRs08R8jd2Mx1inpPrQR7uvtKIiY4SYnEmFKgath/9Ef0/K83RtgQ8tqgeKJ09hJe1oSDgsk8xYocMjnWCIUgN7pYn4630fiZmSuwnKPnvTYetizQmbmdxksICEFV9eng/yZogeJultGx5Q5YOci8SvWScEWB4K1HOFHHApQIcRUD8fzjK3o1tMlPP/L9SBf4PKMyWEvnJKSc20XhnN1ZWUMZXmLaJU+42gmAvnECypv4q6QodmDOfL8CcHxJ+nh2KaujE89N5VcaWF//33KoG0NBrVkdmA5lWUT/ru2JBjq9LeYfVi7dcpnAI0FQ+3+KRrHFWMkhjL14giWEfQUxc0aYh+P6c7P9qBEb3JPekKIrH4WeScmccnY0a537VqBX6x9AHZJc+ub7k/kJc3b6ylKNzzqkbuZjmHHpK55/BzkYqzbsmerCwVkmi9chkxzjn2P763sWQxPh8tH18cpOg3dvlh1bMSJ/dWPvRlKY+BrzTprDoHGVEuDd4Z3RCKecK4jLOkUxlrwIgEl0aUnwp/amn7vF9hV4Nku50m5NgXC3DjNqITCCYpGsKFy35vxC2veZaL+TxnF2TdBpcO1qOHGtILE6UkHRMgRrVP9O2oLQjAiolDh6Z2QNTRLkymKciQAtyHVvo="
+
+before_install:
+    - travis_retry sudo add-apt-repository -y ppa:hvr/ghc
+    - travis_retry sudo apt-get update -q
+    - travis_retry sudo apt-get install cabal-install-1.22 ghc-7.10.2
+    - export PATH=/opt/ghc/7.10.2/bin:/opt/cabal/1.22/bin:$PATH
+    - git submodule foreach --recursive 'git checkout master; git ls-files | grep -v README | grep -v CNAME | xarg -r git rm'
+
+install:
+    - travis_retry cabal update
+    - cabal sandbox init
+    - cabal install --only-dependencies --disable-documentation
+    - cabal configure --disable-library-profiling --disable-tests --disable-library-coverage --disable-benchmarks --disable-split-objs
+
+before_script:
+    - git config --global user.name "$GH_NAME"
+    - git config --global user.email "$GH_EMAIL"
+
+script:
+    - cabal run -j build
+
+after_success:
+    - if [[ "$TRAVIS_BRANCH" == "source" ]]; then
+    cd _site;
+    export REMOTE=$(git config remote.origin.url | sed 's/.*:\/\///');
+    git remote add github https://${GH_TOKEN}@${REMOTE};
+    git add --all;
+    git status;
+    git commit -m "Built by Travis (build $TRAVIS_BUILD_NUMBER)";
+    git push --quiet github master:master;
+    fi
