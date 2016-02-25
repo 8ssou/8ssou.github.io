@@ -2,5 +2,5 @@
 title: Contact
 ---
 
-I live in a small hut in the mountains of Kumano Kodō on Kii Hantō and would not
+I live in the outlying part of cyberspace and would not
 like to be contacted.
