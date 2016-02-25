@@ -6,6 +6,11 @@ title: Home
 
 <p>Welcome to my blog!</p>
 
+$if(tags)$
+<h2>Tags</h2>
+$tags$
+$endif$
+
 <h2>Posts</h2>
 $partial("templates/post-list.html")$
 
