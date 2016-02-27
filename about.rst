@@ -1,10 +1,12 @@
 ---
 title: About
 ---
-Trash box of messy text like SPAM for boring being.
+Trash box of messy text like SPAM like a poem for boring being.
 
 このウェブサイトは次のページを参考にして作りました。:
+
 .. raw:: html
+
     <!-- This website was constructed by reference to the following sites: -->
 
 * `Hakyllを使ってGitHub Pagesを作成して、そのソースも管理して、Travis CIで自動デプロイする。 - Wake up! Good night*<https://imokuri123.com/blog/2015/04/create-github-pages-with-hakyll.html>`_
