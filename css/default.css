@@ -58,3 +58,7 @@ div.info {
 ul {
     list-style-type: square;
 }
+
+blockquote {
+    font-style: italic;
+}
