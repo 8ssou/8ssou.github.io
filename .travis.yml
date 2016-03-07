@@ -1,3 +1,4 @@
+language: haskell
 
 branches:
     only:
@@ -9,20 +10,20 @@ env:
         - secure: "zbGYRL1wZxttmLu7/fLeS/zdsB51H6RAdhmf2tOJkunLvwvB/mBjPay+rAIl9O7bFWwtnoSjJiQzo4qkB97N7jMDlV5cpCpGbMTJXiil18JXnRUKu2wPpnwLVc9UIgVBTzSCIbRWFR0NDHyw08lrgidNSnlkpGHEbEBrfsO1IHIV/67dK/ENGzsBt2yG18S0qUWJz+qqcfZKc7rJRUVXJaQPDJp0qsgv/eYH/EDCjsJtv8bmglSFN0SPWdYPyveVvyu1fwxeLly56YzqrSsySMKIIJf/mONTeBRiwiQHCikaSqdDHykPk1t27OvKTl7cekyWNlRhGdGzfYIG7vUeDc3C5RaTPeghy5R7CDJgrPvCo4H3OsLa/Joq4sklngRc0KZ6iLwmSuiwtwtZZJ38TlPQLz2a4WgN7H/BfEURBYkKJbx4JJ1YexCd+TywSN5hlvgdsFfUNnqgilqIPTKtqraWV5jdvzjMZq1DXcLcCMYLH05ttX4Fyue9e/fBB4YkIq7VGUmRxMkD0RYgvwFyJHpN5O1ERsTIIbItT02EBv6PQnaUM+dHCZh2v1WZYVuMG+kbbyevN917bxJhA/zWvQX7gDl4ZwUYnbKd5SufVglrD25lTetV0RGt8RAln33i/r6wpgxdCx6LSk78KrXRDbntY9am5H1a1YdApbR2ZIw="
         - secure: "VnIkAr7HbizN0IWqmWr9BfoilZaToRBXuiXn8eXFIAd+dVVeUHn/qk/c+eRl61Zs2RngpUBQY2zb7gahUUnGQ5wfKVtwEVf+dcC8xFvtaE7LGcf34sYm2mY1CmtYm0z7rtoiR+Pkj16HY+DaIgIJ2MyeXP10IGRm5MD6JHWG+iGxgX5VwLdf6xj0UvFldWPWR2vdqWuVxkcV+4WlPLD3u8q9hXfRy7EAGdZkj4BCgg2k0S2yDvteFdjPyKc/5DxV3zb4b5Ox+I1DRR1OJ2Rrz8TA6AVqHZ25GqiHy9TarFQP+kcv/nd8BKhKbS7i3C/R0TMEep4kzBmm29l8qYN4tAhPCLNQJTW9JQLVt0tpI2j0mfGoVOMUT0tmoHomKBzSPkAX548KiKXHFAASNgSeJMQkQmoGXmPioTGJrDFbcjZSaPdZ7kyvn/dEAu+cXtuOk2nNTgDKxCMGr8mBd916GjryUDYwi5JiJGCP5Ij+nH6+Ehk/skYu3ojG3akyzyL65wqgsh2b3EU9P99/ifEABDF3d9TnTYmmrw97Lq66sU1k8JbDUjtMQtHSKrOXCXrJVVSDeMVbDEREJfWOWuFYOQ+jvdnmGxr0fdnIPhAvkaareOV1z61P/w8Yz9jl8NfA3auwzemEvtJzy/m01B5MHquSQi1uQ9yvF+I5aZfrg9w="
 
-before_install:
-    - travis_retry sudo add-apt-repository -y ppa:hvr/ghc
-    - travis_retry sudo apt-get update -q
-    - travis_retry sudo apt-get install cabal-install-1.22 ghc-7.10.1
-    - export PATH=/opt/ghc/7.10.1/bin:/opt/cabal/1.22/bin:$PATH
-    - git submodule foreach --recursive 'git checkout master; git ls-files | grep -v README | grep -v CNAME | xargs -r git rm'
+#before_install:
+#    - travis_retry sudo add-apt-repository -y ppa:hvr/ghc
+#    - travis_retry sudo apt-get update -q
+#    - travis_retry sudo apt-get install cabal-install-1.22 ghc-7.10.1
+#    - export PATH=/opt/ghc/7.10.1/bin:/opt/cabal/1.22/bin:$PATH
+#    - git submodule foreach --recursive 'git checkout master; git ls-files | grep -v README | grep -v CNAME | xargs -r git rm'
 
 before_script:
     - git config --global user.name "$GH_NAME"
     - git config --global user.email "$GH_EMAIL"
 
 install:
-    - travis_retry cabal update
-    - cabal sandbox init
+    #    - travis_retry cabal update
+    #    - cabal sandbox init
     - cabal install --only-dependencies --disable-documentation
     - cabal configure --disable-library-profiling --disable-tests --disable-library-coverage --disable-benchmarks --disable-split-objs
 
