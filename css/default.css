@@ -16,7 +16,7 @@ div#logo a {
     float: left;
     font-size: 18px;
     font-weight: bold;
-    text-decoration: none;
+    text-decoration: underline overline dotted gainsboro;
 }
 
 div#header #navigation {
