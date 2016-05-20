@@ -28,6 +28,7 @@ div#header #navigation a {
     font-size: 18px;
     font-weight: bold;
     margin-left: 12px;
+    margin-right: 5px;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -43,6 +44,17 @@ div#footer {
 
 h1 {
     font-size: 24px;
+}
+
+article section h1 {
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+    border-bottom-color: gray;
+    border-right-style: solid;
+    border-right-width: 10px;
+    border-right-color: silver;
+    padding-right: 5px;
+    display: table;
 }
 
 h2 {
@@ -61,4 +73,9 @@ ul {
 
 blockquote {
     font-style: italic;
+}
+
+nav > span {
+    border: 1px solid gray;
+    border-radius: 0.2em;
 }
