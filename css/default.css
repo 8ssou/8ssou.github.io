@@ -33,6 +33,20 @@ div#header #navigation a {
     text-transform: uppercase;
 }
 
+div#header #navigation span:hover {
+    background-color: silver;
+    border-color: black;
+}
+
+div#header #navigation span:hover a {
+    color: white;
+}
+
+div#header #navigation span {
+    border: 1px solid gray;
+    border-radius: 0.2em;
+}
+
 div#footer {
     border-top: solid 2px black;
     color: #555;
@@ -50,7 +64,7 @@ article section h1 {
     border-bottom-style: solid;
     border-bottom-width: 4px;
     border-bottom-color: gray;
-    border-right-style: solid;
+    border-right-style: dashed;
     border-right-width: 10px;
     border-right-color: silver;
     padding-right: 5px;
@@ -75,7 +89,4 @@ blockquote {
     font-style: italic;
 }
 
-nav > span {
-    border: 1px solid gray;
-    border-radius: 0.2em;
-}
+
