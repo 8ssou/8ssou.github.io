@@ -1,8 +1,15 @@
+@import url(//fonts.googleapis.com/css?family=Roboto);
+@font-face {
+    font-family: 'OriginalFontFam';
+    src: local('IPAPGothic'), local('MSPGothic');
+}
+
 body {
     color: black;
     font-size: 16px;
     margin: 0px auto 0px auto;
     width: 600px;
+    font-family: "Roboto", "OriginalFontFam";
 }
 
 div#header {
@@ -21,6 +28,8 @@ div#logo a {
 
 div#header #navigation {
     text-align: right;
+    font-family: "Roboto";
+    font-weight: bold;
 }
 
 div#header #navigation a {
@@ -69,10 +78,14 @@ article section h1 {
     border-right-color: silver;
     padding-right: 5px;
     display: table;
+    font-family: "Roboto";
+    font-weight: bold;
 }
 
 h2 {
     font-size: 20px;
+    font-family: "Roboto";
+    font-weight: bold;
 }
 
 div.info {
