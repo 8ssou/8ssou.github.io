@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/css?family=Roboto);
+@import url(//fonts.googleapis.com/css?family=Roboto:normal,bold);
 @font-face {
     font-family: 'OriginalFontFam';
     src: local('IPAPGothic'), local('MSPGothic');
@@ -43,12 +43,11 @@ div#header #navigation a {
 }
 
 div#header #navigation span:hover {
-    background-color: silver;
     border-color: black;
 }
 
 div#header #navigation span:hover a {
-    color: white;
+    color: silver;
 }
 
 div#header #navigation span {
