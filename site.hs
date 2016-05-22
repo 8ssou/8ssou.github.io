@@ -59,12 +59,14 @@ main = hakyll $ do
                 >>= relativizeUrls
 
 
+    let numberDisplayRecentPosts = 5
+
     match "index.html" $ do
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
-                    listField "posts" postCtx (return posts) `mappend`
+                    listField "posts" postCtx (return (take numberDisplayRecentPosts posts)) `mappend`
                     constField "title" "Home"                `mappend`
                     defaultContext
 
