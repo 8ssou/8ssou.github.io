@@ -10,35 +10,16 @@ body {
     margin: 0px auto 0px auto;
     width: 600px;
     font-family: "Roboto", "OriginalFontFam";
+    background-image: url("../images/zikannai.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 div#header {
-    border-bottom: 2px solid black;
+    border-bottom: 2px dotted black;
     margin-bottom: 30px;
     padding: 12px 0px 12px 0px;
-}
-
-div#logo a {
-    color: black;
-    float: left;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    background-image: -webkit-linear-gradient( 135deg, transparent, transparent 45px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);
-    background-image: -moz-linear-gradient( 135deg, transparent, transparent 45px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);
-    background-image: -ms-linear-gradient( 135deg, transparent, transparent 45px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);
-    background-image: -o-linear-gradient( 135deg, transparent, transparent 45px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);
-    background-image: linear-gradient( 135deg, transparent, transparent 45px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);
-    background-color: gray;
-    border-bottom-style: dashed;
-    border-bottom-color: white;
-    border-bottom-width: 5px;
-    border-right-style: solid;
-    border-right-width: 5px;
-    border-right-color: rgb(192,192,192);
-    border-left-style: solid;
-    border-left-width: 5px;
-    border-left-color: gray;
 }
 
 div#header #navigation {
@@ -71,7 +52,7 @@ div#header #navigation span {
 }
 
 div#footer {
-    border-top: solid 2px black;
+    border-top: dotted 2px black;
     color: #555;
     font-size: 12px;
     margin-top: 30px;
@@ -80,26 +61,45 @@ div#footer {
 }
 
 h1 {
+    margin-top: 16px;
+    margin-bottom: 16px;
     font-size: 24px;
+}
+
+div#content {
+    background-color: rgba(216,226,253,0.2);
+}
+
+article section {
+    padding-top: 2px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 2px;
 }
 
 article section h1 {
     border-bottom-style: solid;
-    border-bottom-width: 4px;
+    border-bottom-width: 8px;
     border-bottom-color: gray;
-    border-right-style: dashed;
-    border-right-width: 10px;
-    border-right-color: silver;
     padding-right: 5px;
     display: table;
     font-family: "Roboto";
     font-weight: bold;
 }
 
+div.info:last-of-type {
+    margin-bottom: 10px;
+}
+
 h2 {
     font-size: 20px;
     font-family: "Roboto";
     font-weight: bold;
+}
+
+div.figure img {
+    max-height: 100%;
+    max-width: 100%;
 }
 
 div.info {
