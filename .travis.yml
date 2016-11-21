@@ -26,7 +26,7 @@ install:
     - travis_retry cabal update
     - cabal sandbox init
     #    - cabal install cabal-install
-    - cabal install --only-dependencies --disable-documentation --max-backjumps=-1 --constraint='aeson-pretty < 0.8 && primitive == 0.6.1.0'
+    - cabal install --only-dependencies --disable-documentation --max-backjumps=-1 --constraint='aeson-pretty < 0.8' --constraint='primitive <= 0.6.1.0'
     - cabal configure --disable-library-profiling --disable-tests --disable-library-coverage --disable-benchmarks --disable-split-objs
 
 script:
