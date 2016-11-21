@@ -15,7 +15,7 @@ main = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
-    match "css/*.scss" & do
+    match "css/*.scss" $ do
         route   $ setExtension "css"
         compile $ getResourceString >>=
             withItemBody (unixFilter "sass" ["-s", "--scss"]) >>=
@@ -26,6 +26,10 @@ main = hakyll $ do
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
+
+    match (fromList ["BingSiteAuth.xml"]) $ do
+        route   idRoute
+        compile copyFileCompiler
 
     -- build up tags
     tags <- buildTags "posts/*" (fromCapture "tag/*.html")
