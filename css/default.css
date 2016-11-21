@@ -4,6 +4,10 @@
     src: local('IPAPGothic'), local('MSPGothic');
 }
 
+html {
+    height: 100%;
+}
+
 body {
     color: black;
     font-size: 16px;
@@ -14,18 +18,24 @@ body {
     background-position: right bottom;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
 }
 
 div#header {
-    border-bottom: 2px dotted black;
+    /* border-bottom: 2px dotted black; */
     margin-bottom: 30px;
     padding: 12px 0px 12px 0px;
+    background-color: rgba(216,226,253,0.1);
+    flex: 0 1 auto;
 }
 
 div#header #navigation {
     text-align: right;
     font-family: "Roboto";
     font-weight: bold;
+    padding-right: 10px;
 }
 
 div#header #navigation a {
@@ -49,15 +59,18 @@ div#header #navigation span:hover a {
 div#header #navigation span {
     border: 1px solid gray;
     border-radius: 0.2em;
+    background-color: rgba(216,226,253,0.4);
 }
 
 div#footer {
-    border-top: dotted 2px black;
-    color: #555;
+    /* border-top: dotted 2px black; */
+    color: #E6E6E6;
     font-size: 12px;
     margin-top: 30px;
-    padding: 12px 0px 12px 0px;
+    padding: 12px 10px 12px 0px;
     text-align: right;
+    background-color: rgba(216,226,253,0.1);
+    flex: 1 1 auto;
 }
 
 h1 {
@@ -68,6 +81,10 @@ h1 {
 
 div#content {
     background-color: rgba(216,226,253,0.2);
+}
+
+article {
+    flex: 0 1 auto;
 }
 
 article section {
@@ -87,7 +104,7 @@ article section h1 {
     font-weight: bold;
 }
 
-div.info:last-of-type {
+div.info-box {
     margin-bottom: 10px;
 }
 
