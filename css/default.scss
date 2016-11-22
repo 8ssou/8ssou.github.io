@@ -1,0 +1,142 @@
+@import url(//fonts.googleapis.com/css?family=Roboto:normal,bold);
+
+@font-face {
+    font-family: 'OriginalFontFam';
+    src: local('IPAPGothic'), local('MSPGothic');
+}
+ 
+$base-color: #d8e2fd;
+$content-vertical-margin: 30px;
+$content-vertical-padding: 12px;
+$content-horizontal-padding: 10px;
+
+html {
+    height: 100%;
+}
+
+body {
+    color: black;
+    font-size: 16px;
+    margin: 0px auto 0px auto;
+    width: 600px;
+    font-family: "Roboto", "OriginalFontFam";
+    background-image: url("../images/zikannai.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+h1 {
+    margin-top: 0px;
+    margin-bottom: 16px;
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: square;
+}
+
+blockquote {
+    font-style: italic;
+}
+
+article {
+    flex: 0 1 auto;
+
+    section {
+        padding-top: $content-vertical-padding;
+        padding-right: $content-horizontal-padding;
+        padding-left: $content-horizontal-padding;
+        padding-bottom: $content-vertical-padding;
+
+        h1 {
+            border-bottom-style: solid;
+            border-bottom-width: 8px;
+            border-bottom-color: gray;
+            padding-right: 5px;
+            display: table;
+            font-family: "Roboto";
+            font-weight: bold;
+        }
+    }
+}
+
+div {
+
+    &#header {
+        margin-bottom: $content-vertical-margin;
+        padding: $content-vertical-padding 0px $content-vertical-padding 0px;
+        background-color: rgba($base-color,0.1);
+        flex: 0 1 auto;
+
+        #navigation {
+            text-align: right;
+            font-family: "Roboto";
+            font-weight: bold;
+            padding-right: $content-horizontal-padding;
+
+            a {
+                color: black;
+                font-size: 18px;
+                font-weight: bold;
+                margin-left: 12px;
+                margin-right: 5px;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            span {
+                border: 1px solid gray;
+                border-radius: 0.2em;
+                background-color: rgba($base-color,0.4);
+
+                &:hover {
+                    border-color: black;
+
+                    a {
+                        color: silver;
+                    }
+                }
+            }
+        }
+    }
+
+
+    &#footer {
+        color: #E6E6E6;
+        font-size: 12px;
+        margin-top: $content-vertical-margin;
+        padding: $content-vertical-padding $content-horizontal-padding $content-vertical-padding 0px;
+        text-align: right;
+        background-color: rgba($base-color,0.1);
+        flex: 1 1 auto;
+    }
+
+    &#content {
+        background-color: rgba($base-color,0.2);
+    }
+
+    &.info {
+        color: #555;
+        font-size: 14px;
+        font-style: italic;
+    }
+
+    &.info-box {
+        margin-bottom: 10px;
+    }
+
+    &.figure img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+}
