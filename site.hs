@@ -75,9 +75,11 @@ main = hakyll $ do
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
+            tagCloud <- renderTagCloud 100.0 100.0 tags
             let indexCtx =
                     listField "posts" postCtx (return (take numberDisplayRecentPosts posts)) `mappend`
-                    constField "title" "Home"                `mappend`
+                    constField "title" ""                `mappend`
+                    constField "tags" tagCloud `mappend`
                     defaultContext
 
             getResourceBody
