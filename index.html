@@ -6,10 +6,10 @@ title: Home
 
 $if(tags)$
 <h2>Tags</h2>
-$tags$
+<span class="link">$tags$</span>
 $endif$
 
 <h2>Posts</h2>
 $partial("templates/post-list.html")$
 
-<p>過去のものは<a href="/archive.html">archives</a>から見つけることができます。</p>
+<p>過去のものは<span class="link"><a href="/archive.html">archives</a></span>から見つけることができます。</p>

@@ -49,23 +49,50 @@ ul {
     list-style-type: square;
 }
 
+.link {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: $base-color;
+
+    a {
+        text-decoration: none;
+    }
+
+}
+
+
 blockquote {
     font-style: italic;
+
+    p:last-of-type {
+        font-size: small;
+        text-align: end;
+    }
 }
 
 article {
     flex: 0 1 auto;
 
     section {
+        border-radius: 2px 2px 10px 2px;
+        border-top-style: solid;
+        border-top-width: 2px;
+        border-top-color: rgba($base-color, 0.2);
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        border-bottom-color: rgba($base-color, 0.2);
+
         padding-top: $content-vertical-padding;
         padding-right: $content-horizontal-padding;
         padding-left: $content-horizontal-padding;
         padding-bottom: $content-vertical-padding;
 
+        background-color: rgba($base-color,0.2);
+
         h1 {
             border-bottom-style: solid;
             border-bottom-width: 8px;
-            border-bottom-color: gray;
+            border-bottom-color: $base-color;
             padding-right: 5px;
             display: table;
             font-family: "Roboto";
@@ -123,10 +150,6 @@ div {
         text-align: right;
         background-color: rgba($base-color,0.1);
         flex: 1 1 auto;
-    }
-
-    &#content {
-        background-color: rgba($base-color,0.2);
     }
 
     &.info {
