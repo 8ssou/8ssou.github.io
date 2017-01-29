@@ -2,6 +2,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
+import           Hakyll.Web.Sass (sassCompiler)
 
 
 --------------------------------------------------------------------------------
@@ -17,9 +18,8 @@ main = hakyll $ do
 
     match "css/*.scss" $ do
         route   $ setExtension "css"
-        compile $ getResourceString >>=
-            withItemBody (unixFilter "sass" ["-s", "--scss"]) >>=
-            return . fmap compressCss
+        let compressCssItem = fmap compressCss
+        compile (compressCssItem <$> sassCompiler)
 
     match (fromList ["about.rst", "contact.markdown"]) $ do
         route   $ setExtension "html"
