@@ -14,7 +14,7 @@ env:
 
 before_install:
     - sudo echo "repository hackage.haskell.org" >> ~/.cabal/config
-    - sudo echo "  url: http://hackage.haskell.org/" >> ~/.cabal/config
+    - sudo echo " url: http://hackage.haskell.org/" >> ~/.cabal/config
     - travis_retry sudo apt-get install -y software-properties-common
     - travis_retry sudo add-apt-repository -y ppa:hvr/ghc
     - travis_retry sudo apt-get update -q
