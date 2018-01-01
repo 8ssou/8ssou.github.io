@@ -13,8 +13,7 @@ env:
         - secure: "VnIkAr7HbizN0IWqmWr9BfoilZaToRBXuiXn8eXFIAd+dVVeUHn/qk/c+eRl61Zs2RngpUBQY2zb7gahUUnGQ5wfKVtwEVf+dcC8xFvtaE7LGcf34sYm2mY1CmtYm0z7rtoiR+Pkj16HY+DaIgIJ2MyeXP10IGRm5MD6JHWG+iGxgX5VwLdf6xj0UvFldWPWR2vdqWuVxkcV+4WlPLD3u8q9hXfRy7EAGdZkj4BCgg2k0S2yDvteFdjPyKc/5DxV3zb4b5Ox+I1DRR1OJ2Rrz8TA6AVqHZ25GqiHy9TarFQP+kcv/nd8BKhKbS7i3C/R0TMEep4kzBmm29l8qYN4tAhPCLNQJTW9JQLVt0tpI2j0mfGoVOMUT0tmoHomKBzSPkAX548KiKXHFAASNgSeJMQkQmoGXmPioTGJrDFbcjZSaPdZ7kyvn/dEAu+cXtuOk2nNTgDKxCMGr8mBd916GjryUDYwi5JiJGCP5Ij+nH6+Ehk/skYu3ojG3akyzyL65wqgsh2b3EU9P99/ifEABDF3d9TnTYmmrw97Lq66sU1k8JbDUjtMQtHSKrOXCXrJVVSDeMVbDEREJfWOWuFYOQ+jvdnmGxr0fdnIPhAvkaareOV1z61P/w8Yz9jl8NfA3auwzemEvtJzy/m01B5MHquSQi1uQ9yvF+I5aZfrg9w="
 
 before_install:
-    - sudo echo 'repository hackage.haskell.org' >> ~/.cabal/config
-    - sudo echo 'url: http://hackage.haskell.org/' >> ~/.cabal/config
+    - sudo cat ~/.cabal/config
     - travis_retry sudo apt-get install -y software-properties-common
     - travis_retry sudo add-apt-repository -y ppa:hvr/ghc
     - travis_retry sudo apt-get update -q
