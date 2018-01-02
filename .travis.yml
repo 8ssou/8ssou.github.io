@@ -28,7 +28,7 @@ install:
     - sudo rm ~/.cabal/config
     - travis_retry cabal update
     - cabal sandbox init
-    #    - cabal install cabal-install
+    - cabal install happy
     - cabal install --only-dependencies --disable-documentation --max-backjumps=-1
     - cabal configure --disable-library-profiling --disable-tests --disable-coverage --disable-benchmarks --disable-split-objs
 
