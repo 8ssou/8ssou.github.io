@@ -9,8 +9,8 @@ env:
         - GH_NAME='8ssou.travis'
         - CABAL_VERSION='1.22'
         - GHC_VERSION='7.10.3'
-        - secure: "R9Y/xUe0FmM+Lm719GccqZmzCcuvEyEUj12hS7r7W1ipTUtNUBAuVtVFDLZSRENCdQy8bmT+64GLgVd7ZjwiNdF9d0unc5mAm0LwQc1RQk+s3yDCrZaPn9ygIoWom0Ojs/jRjT+kR5y0jJj0tCtQp26E3k+fYCQV5SToLT1S7Miz736N/SaJCzJ0CxHFGCzRx2iMN+qrFklWb8cGQae0PVd1zigDLGWvaClDGILcld37MqOdk2No1f5wH4U2qhNpJOSN+8+MoCo+s6n5iX7Ga5/HaUf6R2K/Z9QhwDz08ElwQWg09Vs97MsUbeBn7xjDrOCfbTesSH6sjPXyA9rAqNrtUDtt6sozqny0uQsFdme0bYDpnJhTHIGQEIMcbYu3vQrDnJUUTJ8e/tZx1BixgUq6P2KTIpvYMSv/C858oK2cXuaHeLgIhRoookfwFTChIZkN6H1uDjPmWbkeq8gHWU6VSCU0vvo++yUlstMaIJWAbnuURucdLRe0acuDXJHf7gM+WvyfeRxbOQRcHGgJT8RDXSDgnsmxF95sowIxsvwJ5CAMKtp2vnkIruSZnvgkivAOKy53fyIfX4ulV886EqdApTFO4z38Nj8Oqk25ZYZZJhvsOWw4KETjTDhzmMnUPQBMToMcN8gfltIS6GWwiQveHwO/2vUlAPFU+ohYz3I="
-        - secure: "wHwqDqWjZFBWQ9dFB/5fIbJAZ/Uqz3e3fzcbwMpjH/jhDNvsQWs0I1KX67YCkinMAMCKcaIgVXOWM19MxP76WaYdU4FkmearO0iOOzek/fA8ehGoTmDgSV9NDhYja6GQ7Fn5P/CkxikI+ccelqBKMRN6KWIo800d4FQzayjTWiiRh6rh4MJ9nTtXFWzlsigxlwB6pSj/wub1ztms5lOC30nqzuxkQrU/zqSJHjK381uCwmSKCyYc3Pi9lpd8bqXTr7lqc57HzfXhxY5ozRWKMFflqwka0tjfQl6A3y4tvhNlvUQPbC7NmtDMiRPXGba8BiKuB4LusLEnHSqCTS97J1lBXONR77hCHV4vA8nM+gHPbJJXjYe9q4RU8nbcyBpcRdJWCkv38JoHMLpfdtbI2q3s2a2AciLg1PVMR+bw09JG0zY4EY6Zj8v15O2TNleqtaXqkcucr1G15ntlhM+LpZSFVPhxIMswDsn+/U4NLO88357oe0LJiRHdO56Ly6JLtmFsPHYXsPamaDRQz6NwRDdlZSOBSfqM9w4eXbKusSXM5PoY5g4rUKeiDdtARI/sXHFYInKe2o8ZMzna6ckaiHgjCzdOXAbeNsBXcw8b/0G/W7tcDgsLmVoon+0Uu7+jMZPubZpQDcAYSHFNAUv8YyluAUORcrmd0uLZeMQmQCk="
+        - secure: "JbaABUyPhIR0dDqdnIqrpHduWZk5kJ+oMLljSibrKMWNhFqcPZ51A18rT3ZM5O89WSFwZaG0lnp2oAY//efFw12/WRn4aVzKLpuHP0d31LuXwEXRRGcdd9i6qR0Agyoqu+x1EZzfT6yElLoPT5y5xxX7JtnNHOh0tmTY4CXH4zf2s15R5pLFBPs+YUpvjE08EceTcDzmhEYGn6BhuWkCcKfJFKQYNzCoaNI3pgDePNTBYDFydBVYP7E4+oFJ5/n4ZW7RyV74B7BrtJLbTUZKt9ox9UBHW4l213O7sXtgUJ8EmqWouL1SEiSe4nIll0bGCs+4EcRcZWFHQIUm+UqYwC0frBLFwbRx/FVjSPOSKHZiCtYAW8uR6fkID5gixpWnnoGptrSJMO3yfz396+aQ6tFyPNJtRvpaGPL/QWXDIf1SGx7WOmRd/gO8uoP89y54yBewnTOBBtXGKO2ABzwtYC/WYTsajB/AWYozstmYZQwrgRNiNwwaulGtt9pdxgp6Wtpki86iVVlpBv8wiNQI+oNK55PYKJadqKpsULqacxAITfjx5+NipErWWCFhet4+HYTcPEOQRlx2T54XTdah3y0OLjzDpHLy9SHzDb87RKhzn1IclGAZIQ98+3wQ0C1XUCGvpE8CUiHn/J1VSb43yH8itJoAtkCwBQYkftop9eM="
+        - secure: "em9TmK7ARZgo8XYcqHlCxRgGUZmHqjWy3x4mP5hRHyxn8OoaMLSuBZaHdR2UKWWghrEhnCf6ppT/qQT9VwcKFZoW2TsTuTtwDoMbrdm3vA7fKpyShMw1yhNwrY7qq0imF0/bm7v2I0GUkulq+R5UWhs7xLlgEf+G+8b+mzmn4/NhKixf1ORwtV0nU8UQT5Ta+x8UFuJFUINW9GW1ch3BaGV98qfRcFVLBITRHPf3sA7aGkTmP99bBQFjzkQ2/5UuBoh0L1XI3GTvC/2VJljkcoP5dRKTRXUV94sADmofE/gl3vgGuZiVCNgerD0NkZJrN68NxoElzXVW2R/SZmW+qKl9/Gla2jA7HMRlmcDZlHA8Fq4opTIA6HFp+7+GB+MT/t8Je0MiVpjTALVJWjA1FV1DrDHM/bReWt28eUnmMYy3uQmGngIanzVZSy0TBpgEQoGB6xja6xFwPHF/2DLYJo6S+Bu0RxVWvGUjZ/qCTmc3kZF5TDfxmmHNQwfJiPZMREkBQY8m81JPP/w437dJz7OsOAo8UHcFmKhvlqHZzMe/Q3EReHAX4Wwx+x/5AgOT2JYdyE/G5SwZPIdoEM5qVl8KNizZ85IOQcQ8x3IXsFsJrr2VmVRnUw1IwUzn5YsshNI1PLayAz3LYcbSnN4cw0AffQXZzAvUij2q9t6eEyY="
 
 before_install:
     - travis_retry sudo apt-get install -y software-properties-common
@@ -25,10 +25,8 @@ before_script:
     - git config --global user.email "$GH_EMAIL"
 
 install:
-    - sudo rm ~/.cabal/config
     - travis_retry cabal update
     - cabal sandbox init
-    - cabal install happy
     - cabal install --only-dependencies --disable-documentation --max-backjumps=-1
     - cabal configure --disable-library-profiling --disable-tests --disable-coverage --disable-benchmarks --disable-split-objs
 
