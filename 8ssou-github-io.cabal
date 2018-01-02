@@ -6,6 +6,7 @@ cabal-version:      >= 1.10
 executable site
   main-is:          site.hs
   build-depends:    hakyll == 4.9.7.0
+                  , base == 4.8.2.0
                   , hlibsass == 0.1.5.0
                   , pretty-show == 1.6.13
                   , hakyll-sass >= 0.2.2
