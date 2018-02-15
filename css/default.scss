@@ -6,6 +6,7 @@
 }
  
 $base-color: #d8e2fd;
+$head-color: hsla(224,10.0%,82.0%,1.0);
 $content-vertical-margin: 30px;
 $content-vertical-padding: 12px;
 $content-horizontal-padding: 10px;
@@ -87,12 +88,12 @@ article {
         padding-left: $content-horizontal-padding;
         padding-bottom: $content-vertical-padding;
 
-        background-color: rgba($base-color,0.2);
+        background-color: rgba($base-color,0.4);
 
         h1 {
             border-bottom-style: solid;
             border-bottom-width: 8px;
-            border-bottom-color: $base-color;
+            border-bottom-color: $head-color;
             padding-right: 5px;
             display: table;
             font-family: "Roboto";
@@ -106,7 +107,7 @@ div {
     &#header {
         margin-bottom: $content-vertical-margin;
         padding: $content-vertical-padding 0px $content-vertical-padding 0px;
-        background-color: rgba($base-color,0.1);
+        background-color: rgba($base-color,0.9);
         flex: 0 1 auto;
 
         #navigation {
@@ -148,7 +149,7 @@ div {
         margin-top: $content-vertical-margin;
         padding: $content-vertical-padding $content-horizontal-padding $content-vertical-padding 0px;
         text-align: right;
-        background-color: rgba($base-color,0.1);
+        background-color: rgba($base-color,0.9);
         flex: 1 1 auto;
     }
 
@@ -166,4 +167,15 @@ div {
         max-height: 100%;
         max-width: 100%;
     }
+
+	&#inner-content {
+        background-color: hsla(224,30.2%,96.0%,1.0);
+        border-radius: 2px 2px 2px 2px;
+
+        padding-top: $content-vertical-padding;
+        padding-right: $content-horizontal-padding;
+        padding-left: $content-horizontal-padding;
+        padding-bottom: $content-vertical-padding;
+
+	}
 }
