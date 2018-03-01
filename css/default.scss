@@ -9,9 +9,12 @@ $base-color: #d8e2fd;
 $head-color: hsla(224,10.0%,82.0%,1.0);
 $inner-color: hsla(224,30.2%,96.0%,1.0);
 
+$button-hovered-color: #B0C4DE; // LightSteelBlue
+
 $content-vertical-margin: 30px;
 $content-vertical-padding: 12px;
 $content-horizontal-padding: 10px;
+
 
 html {
     height: 100%;
@@ -82,6 +85,12 @@ $fancy-corner-radius: $left-top-corner-radius $right-top-corner-radius $right-bo
 
 $fancy-vertical-margin: 10px;
 
+@mixin gradation {
+	background: linear-gradient(left, #fff, rgba($base-color,0.9));
+	background: -moz-linear-gradient(left, #fff, rgba($base-color,0.9));
+	background: -webkit-linear-gradient(left, #fff, rgba($base-color,0.9));
+}
+
 article {
     flex: 0 1 auto;
 
@@ -121,16 +130,43 @@ footer {
 div {
 
     &#header {
+
+		@include gradation;
+
         margin-bottom: $content-vertical-margin;
         padding: $content-vertical-padding 0px $content-vertical-padding 0px;
-        background-color: rgba($base-color,0.9);
         flex: 0 1 auto;
 
         #navigation {
+
+			@mixin hovering-state {
+				border-color: $button-hovered-color;
+
+				a {
+					color: silver;
+				}
+
+				& ~ #navigation-fancy {
+					z-index: 1;
+				}
+			}
+
             text-align: right;
             font-family: "Roboto";
             font-weight: bold;
             padding-right: $content-horizontal-padding;
+
+			nav:hover > #current-state {
+				border-color: $inner-color;
+
+				a {
+					color: black;
+				}
+
+				&:hover {
+					@include hovering-state;
+				}
+			}
 
             a {
                 color: black;
@@ -142,28 +178,38 @@ div {
                 text-transform: uppercase;
             }
 
-            span {
+            .nav-btn {
                 border: 2px solid $inner-color;
                 border-radius: 0.2em;
                 background-color: rgba($base-color,0.4);
 
-                &:hover {
-                    border-color: black;
-
-                    a {
-                        color: silver;
-                    }
+                &:hover, &#current-state {
+                	@include hovering-state;
                 }
+
             }
         }
+
+		#navigation-fancy {
+			height: 2px;
+			margin-top: -1px;
+			z-index: -1;
+			position: relative;
+			background: linear-gradient(left, #fff, $button-hovered-color);
+			background: -moz-linear-gradient(left, #fff, $button-hovered-color);
+			background: -webkit-linear-gradient(left, #fff, $button-hovered-color);
+			margin-bottom: 10px;
+		}
     }
 
     &#footer {
+
+		@include gradation;
+
         color: $inner-color;
         font-size: 12px;
         margin-top: calc(#{$content-vertical-margin} - #{$fancy-vertical-margin});
         text-align: right;
-        background-color: rgba($base-color,0.9);
         flex: 1 1 auto;
 
 		#fancy-footer {

@@ -1,7 +1,7 @@
 ---
 title: About
 ---
-Trash box of messy text like SPAM like a poem for boring being.
+Trash box of messy text like SPAM like a poem for being boring.
 
 このウェブサイトは次のページを参考にして作りました。:
 
