@@ -23,8 +23,8 @@ html {
 body {
     color: black;
     font-size: 16px;
-    margin: 0px auto 0px auto;
-    width: 600px;
+    margin: 0px 35% 0px 15%;
+    width: 50%;
     font-family: "Roboto", "OriginalFontFam";
     background-image: url("../images/zikannai.png");
     background-position: right bottom;
@@ -86,9 +86,9 @@ $fancy-corner-radius: $left-top-corner-radius $right-top-corner-radius $right-bo
 $fancy-vertical-margin: 10px;
 
 @mixin gradation {
-	background: linear-gradient(left, #fff, rgba($base-color,0.9));
-	background: -moz-linear-gradient(left, #fff, rgba($base-color,0.9));
-	background: -webkit-linear-gradient(left, #fff, rgba($base-color,0.9));
+    background: linear-gradient(left, #fff, rgba($base-color,0.9));
+    background: -moz-linear-gradient(left, #fff, rgba($base-color,0.9));
+    background: -webkit-linear-gradient(left, #fff, rgba($base-color,0.9));
 }
 
 article {
@@ -119,6 +119,11 @@ article {
             font-family: "Roboto";
             font-weight: bold;
         }
+
+		figure {
+			max-width: 640px;
+			margin: 0 auto 0 auto;
+		}
     }
 }
 
@@ -131,7 +136,7 @@ div {
 
     &#header {
 
-		@include gradation;
+        @include gradation;
 
         margin-bottom: $content-vertical-margin;
         padding: $content-vertical-padding 0px $content-vertical-padding 0px;
@@ -139,34 +144,34 @@ div {
 
         #navigation {
 
-			@mixin hovering-state {
-				border-color: $button-hovered-color;
+            @mixin hovering-state {
+                border-color: $button-hovered-color;
 
-				a {
-					color: silver;
-				}
+                a {
+                    color: silver;
+                }
 
-				& ~ #navigation-fancy {
-					z-index: 1;
-				}
-			}
+                & ~ #navigation-fancy {
+                    z-index: 1;
+                }
+            }
 
             text-align: right;
             font-family: "Roboto";
             font-weight: bold;
             padding-right: $content-horizontal-padding;
 
-			nav:hover > #current-state {
-				border-color: $inner-color;
+            nav:hover > #current-state {
+                border-color: $inner-color;
 
-				a {
-					color: black;
-				}
+                a {
+                    color: black;
+                }
 
-				&:hover {
-					@include hovering-state;
-				}
-			}
+                &:hover {
+                    @include hovering-state;
+                }
+            }
 
             a {
                 color: black;
@@ -184,27 +189,27 @@ div {
                 background-color: rgba($base-color,0.4);
 
                 &:hover, &#current-state {
-                	@include hovering-state;
+                    @include hovering-state;
                 }
 
             }
         }
 
-		#navigation-fancy {
-			height: 2px;
-			margin-top: -1px;
-			z-index: -1;
-			position: relative;
-			background: linear-gradient(left, #fff, $button-hovered-color);
-			background: -moz-linear-gradient(left, #fff, $button-hovered-color);
-			background: -webkit-linear-gradient(left, #fff, $button-hovered-color);
-			margin-bottom: 10px;
-		}
+        #navigation-fancy {
+            height: 2px;
+            margin-top: -1px;
+            z-index: -1;
+            position: relative;
+            background: linear-gradient(left, #fff, $button-hovered-color);
+            background: -moz-linear-gradient(left, #fff, $button-hovered-color);
+            background: -webkit-linear-gradient(left, #fff, $button-hovered-color);
+            margin-bottom: 10px;
+        }
     }
 
     &#footer {
 
-		@include gradation;
+        @include gradation;
 
         color: $inner-color;
         font-size: 12px;
@@ -212,11 +217,11 @@ div {
         text-align: right;
         flex: 1 1 auto;
 
-		#fancy-footer {
-			height: $fancy-vertical-margin;
-			background: #ffffffe6;
-			border-radius: $fancy-corner-radius;
-		}
+        #fancy-footer {
+            height: $fancy-vertical-margin;
+            background: #ffffffe6;
+            border-radius: $fancy-corner-radius;
+        }
     }
 
     &.info {
@@ -234,7 +239,7 @@ div {
         max-width: 100%;
     }
 
-	&#inner-content {
+    &#inner-content {
         background-color: $inner-color;
         border-radius: 2px 2px 2px 2px;
 
@@ -243,5 +248,5 @@ div {
         padding-left: $content-horizontal-padding;
         padding-bottom: $content-vertical-padding;
 
-	}
+    }
 }
