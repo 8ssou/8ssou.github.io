@@ -1,14 +1,15 @@
 name:               8ssou-github-io
-version:            0.1.3.0
+version:            0.1.4.0
 build-type:         Simple
-cabal-version:      >= 1.10
+cabal-version:      == 2.0.1.0
 
 executable site
   main-is:          site.hs
-  build-depends:    hakyll == 4.9.7.0
-                  , base == 4.8.2.0
-                  , hlibsass == 0.1.5.0
-                  , pretty-show == 1.6.13
-                  , hakyll-sass >= 0.2.2
+  build-depends:    hakyll == 4.10.0.0
+                  , base == 4.10.1.0
+                  , hlibsass == 0.1.6.1
+                  , hakyll-sass == 0.2.3
+                  , pandoc == 2.0.6
+                  , pandoc-citeproc == 0.12.2.2
   ghc-options:      -threaded
   default-language: Haskell2010
