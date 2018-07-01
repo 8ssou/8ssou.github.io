@@ -7,6 +7,7 @@ executable site
   main-is:          site.hs
   build-depends:    hakyll == 4.10.0.0
                   , base == 4.10.1.0
+                  , mtl == 2.2.1
                   , hlibsass == 0.1.6.1
                   , hakyll-sass == 0.2.3
                   , pandoc == 2.0.6
