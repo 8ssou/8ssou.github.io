@@ -26,8 +26,8 @@ before_script:
 
 install:
     - sudo rm ~/.cabal/config
-    - travis_retry cabal install cabal-2.0.1.0
     - travis_retry cabal update
+    - travis_retry cabal install cabal-2.0.1.0
     - cabal sandbox init
     - cabal install --only-dependencies --disable-documentation --max-backjumps=-1
     - cabal configure --disable-library-profiling --disable-tests --disable-coverage --disable-benchmarks --disable-split-objs
