@@ -134,13 +134,27 @@ footer {
 
 div {
 
+    &#header-container {
+
+        width: 100%;
+        position: fixed;
+        z-index: 256;
+        clear: both;
+
+        + article {
+            padding-top: calc(#{$content-vertical-margin} + 59px);
+        }
+
+    }
+
     &#header {
 
         @include gradation;
 
-        margin-bottom: $content-vertical-margin;
         padding: $content-vertical-padding 0px $content-vertical-padding 0px;
         flex: 0 1 auto;
+
+        width: 50%;
 
         #navigation {
 
@@ -183,6 +197,11 @@ div {
                 text-transform: uppercase;
             }
 
+            .nav-btn-this-page {
+                border-color: $inner-color;
+                @include hovering-state;
+            }
+
             .nav-btn {
                 border: 2px solid $inner-color;
                 border-radius: 0.2em;
@@ -205,6 +224,7 @@ div {
             background: -webkit-linear-gradient(left, #fff, $button-hovered-color);
             margin-bottom: 10px;
         }
+
     }
 
     &#footer {
