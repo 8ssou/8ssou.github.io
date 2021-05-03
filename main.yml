@@ -1,0 +1,52 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. 
+on:
+        # Triggers the workflow on push or pull request events but only for the master branch
+        push:
+                branches: [ source ]
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+        # This workflow contains a single job called "build"
+        cabal:
+                # The type of runner that the job will run on
+                runs-on: ubuntu-latest
+
+                # Steps represent a sequence of tasks that will be executed as part of the job
+                steps:
+                        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+                        - uses: actions/checkout@v2
+                        - uses: haskell/actions/setup@v1
+                          # Runs a single command using the runners shell
+                        - name: Checkout source branch
+                          with:
+                                  ref: source
+                                  # Runs a set of commands using the runners shell
+                        - name: Set git config
+                          env:
+                                  GH_EMAIL: ${{secrets.GH_EMAIL}}
+                          run: |
+                                  git config --global user.name "8ssou.githubaction"
+                                  git config --global user.email "$GH_EMAIL"
+
+                        - name: Prepare haskell environment
+                          run: | 
+                                  sudo rm ~/.cabal/config
+                                  cabal v2-update
+                                  cabal v2-build --only-dependencies --disable-documentation --max-backjumps=-1
+                                  cabal v2-build
+                                  cabal v2-configure --disable-library-profiling --disable-tests --disable-coverage --disable-benchmarks --disable-split-objs
+                        - name: Build hakyll
+                          run: cabal run -j build
+                        - name: Commit and push latest release
+                          run: |
+                                  cd _site
+                                  export REMOTE=$(git config remote.origin.url | sed 's/.*:\/\///')
+                                  git remote add github https://${{secrets.GITHUB_TOKEN}}@${REMOTE}
+                                  git add --all
+                                  git commit -m "Built by Github Action (build ${GITHUB_RUN_ID}_${GITHUB_RUN_NUMBER})"
+                                  git push --quiet github master:master
