@@ -9,8 +9,8 @@ executable site
                   , mtl
                   , hlibsass
                   , hakyll-sass
-                  , attoparsec == 0.13.2.5
-                  , pandoc == 2.10.1
-                  , pandoc-citeproc == 0.17.0.2
+                  , attoparsec
+                  , pandoc
+                  , citeproc
   ghc-options:      -threaded
   default-language: Haskell2010
