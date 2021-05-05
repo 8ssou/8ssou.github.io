@@ -24,6 +24,8 @@ jobs:
                           with:
                                   ref: source
                         - uses: haskell/actions/setup@v1
+                          with:
+                                  cabal-version: '3.4.0.0'
                           # Runs a single command using the runners shell
                           # Runs a set of commands using the runners shell
                         - name: Set git config
