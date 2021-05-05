@@ -1,7 +1,7 @@
+cabal-version:      3.4
 name:               8ssou-github-io
 version:            0.2.0.0
 build-type:         Simple
-cabal-version:      3.4
 
 executable site
   main-is:          site.hs
