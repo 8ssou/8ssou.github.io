@@ -44,7 +44,7 @@ jobs:
                                   cabal v2-build
                                   cabal v2-configure --disable-library-profiling --disable-tests --disable-coverage --disable-benchmarks --disable-split-objs
                         - name: Build hakyll
-                          run: cabal run -j build
+                          run: cabal run -j site build
                         - name: Commit and push latest release
                           run: |
                                   cd _site
