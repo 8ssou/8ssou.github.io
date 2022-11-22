@@ -33,6 +33,7 @@ jobs:
                           env:
                                   GH_EMAIL: ${{secrets.GH_EMAIL}}
                           run: |
+                                  git submodule foreach --recursive 'git checkout master; git ls-files | grep -v README | grep -v CNAME | xargs -r git rm'
                                   git config --global user.name "8ssou.githubaction"
                                   git config --global user.email "$GH_EMAIL"
 
@@ -52,7 +53,6 @@ jobs:
                                   cd _site
                                   export REMOTE=$(git config remote.origin.url | sed 's/.*:\/\///')
                                   git remote add github https://${{secrets.GITHUB_TOKEN}}@${REMOTE}
-                                  git rm -rf --cached _site
                                   git add --all
                                   git commit -m "Built by Github Action (build ${GITHUB_RUN_ID}_${GITHUB_RUN_NUMBER})"
                                   git push --quiet github master:master
