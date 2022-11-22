@@ -55,7 +55,7 @@ jobs:
                                   cd _site
                                   export REMOTE=$(git config remote.origin.url | sed 's/.*:\/\///')
                                   git remote add github https://${{secrets.GITHUB_TOKEN}}@${REMOTE}
-                                  git rm --cached _site -f
+                                  git rm --cached -r --ignore-unmatch _site -f
                                   git add --all
                                   git commit -m "Built by Github Action (build ${GITHUB_RUN_ID}_${GITHUB_RUN_NUMBER})"
                                   git push --quiet github master:master
