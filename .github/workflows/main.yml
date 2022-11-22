@@ -39,6 +39,7 @@ jobs:
                         - name: Prepare haskell environment
                           run: | 
                                   sudo rm ~/.cabal/config
+                                  echo "Cabal process invoke."
                                   cabal v2-update
                                   cabal v2-build --only-dependencies --disable-documentation --max-backjumps=-1
                                   cabal v2-build
@@ -47,6 +48,7 @@ jobs:
                           run: cabal run -j site build
                         - name: Commit and push latest release
                           run: |
+                                  echo "Commit current states."
                                   cd _site
                                   export REMOTE=$(git config remote.origin.url | sed 's/.*:\/\///')
                                   git remote add github https://${{secrets.GITHUB_TOKEN}}@${REMOTE}
