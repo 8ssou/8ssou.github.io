@@ -40,19 +40,22 @@ jobs:
                         - name: Prepare haskell environment
                           run: | 
                                   sudo rm ~/.cabal/config
-                                  echo "Cabal process invoke."
                                   cabal v2-update
                                   cabal v2-build --only-dependencies --disable-documentation --max-backjumps=-1
                                   cabal v2-build
                                   cabal v2-configure --disable-library-profiling --disable-tests --disable-coverage --disable-benchmarks --disable-split-objs
                         - name: Build hakyll
                           run: cabal run -j site build
+                        - name: list files
+                          run: ls -alh
+                        - name: list _site
+                          run: ls -alh _site
                         - name: Commit and push latest release
                           run: |
-                                  echo "Commit current states."
                                   cd _site
                                   export REMOTE=$(git config remote.origin.url | sed 's/.*:\/\///')
                                   git remote add github https://${{secrets.GITHUB_TOKEN}}@${REMOTE}
+                                  git rm --cached _site -f
                                   git add --all
                                   git commit -m "Built by Github Action (build ${GITHUB_RUN_ID}_${GITHUB_RUN_NUMBER})"
                                   git push --quiet github master:master
