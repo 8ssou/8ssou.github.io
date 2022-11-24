@@ -46,16 +46,12 @@ jobs:
                                   cabal v2-configure --disable-library-profiling --disable-tests --disable-coverage --disable-benchmarks --disable-split-objs
                         - name: Build hakyll
                           run: cabal run -j site build
-                        - name: Prestage files
+                        - name: Stage files, commit, and push latest release
                           run: |
                                   cd _site
                                   export REMOTE=$(git config remote.origin.url | sed 's/.*:\/\///')
                                   git remote add github https://${{secrets.GITHUB_TOKEN}}@${REMOTE}
-                        - name: Stage files
-                          run: |
                                   git rm --cached -r --ignore-unmatch . -f
                                   git add --all
-                        - name: Commit and push latest release
-                          run: |
                                   git commit -m "Built by Github Action (build ${GITHUB_RUN_ID}_${GITHUB_RUN_NUMBER})"
                                   git push --quiet github master:master
