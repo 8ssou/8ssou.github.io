@@ -12,14 +12,14 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
-    match "css/*.css" $ do
-        route   idRoute
-        compile compressCssCompiler
-
     match "css/*.scss" $ do
         route   $ setExtension "css"
         let compressCssItem = fmap compressCss
         compile (compressCssItem <$> sassCompiler)
+
+    match "css/*.css" $ do
+        route   idRoute
+        compile compressCssCompiler
 
     match (fromList ["about.rst", "contact.markdown"]) $ do
         route   $ setExtension "html"

@@ -5,6 +5,7 @@
     src: local('IPAPGothic'), local('MSPGothic');
 }
  
+$background-color: #ffffffe6;
 $base-color: #d8e2fd;
 $head-color: hsla(224,10.0%,82.0%,1.0);
 $inner-color: hsla(224,30.2%,96.0%,1.0);
@@ -23,10 +24,11 @@ html {
 body {
     color: black;
     font-size: 16px;
-    margin: 0px 35% 0px 15%;
-    width: 50%;
+    margin: 0px 28% 0px 12%;
+    width: 60%;
     font-family: "Roboto", "OriginalFontFam";
     background-image: url("../images/zikannai.png");
+    background-color: $background-color;
     background-position: right bottom;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -154,7 +156,7 @@ div {
         padding: $content-vertical-padding 0px $content-vertical-padding 0px;
         flex: 0 1 auto;
 
-        width: 50%;
+        width: 60%;
 
         #navigation {
 
@@ -239,7 +241,7 @@ div {
 
         #fancy-footer {
             height: $fancy-vertical-margin;
-            background: #ffffffe6;
+            background: $background-color;
             border-radius: $fancy-corner-radius;
         }
     }
