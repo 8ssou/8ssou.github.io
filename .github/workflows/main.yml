@@ -55,4 +55,4 @@ jobs:
                                   git remote add github https://${{secrets.GITHUB_TOKEN}}@${REMOTE}
                                   git add --all
                                   git commit -m "Built by Github Action (build ${GITHUB_RUN_ID}_${GITHUB_RUN_NUMBER})"
-                                  git push --quiet github master:master
+                                  git push github master:master
