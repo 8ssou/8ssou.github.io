@@ -39,13 +39,6 @@ jobs:
                           run: |
                                   git config --global user.name "8ssou.githubaction"
                                   git config --global user.email "$GH_EMAIL"
-
-                        - uses: actions/cache@v2
-                          with:
-                                  path: ${{ steps.cabal-setup-haskell.outputs.cabal-store }}
-                                  key: ${{ runner.os }}-cabal-${{ hashFiles('cabal.project.freeze') }}
-                                  restore-keys: |
-                                          ${{ runner.os }}-cabal-
                         - name: Prepare haskell environment
                           run: | 
                                   sudo rm ~/.cabal/config
