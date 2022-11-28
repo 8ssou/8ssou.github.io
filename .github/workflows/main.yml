@@ -23,6 +23,7 @@ jobs:
                           uses: actions/checkout@v2
                           with:
                                   ref: source
+                                  submodules: true
                         - uses: haskell/actions/setup@v1
                           with:
                                   cabal-version: '3.4.0.0'
@@ -36,6 +37,12 @@ jobs:
                                   git config --global user.name "8ssou.githubaction"
                                   git config --global user.email "$GH_EMAIL"
 
+                        - uses: actions/cache@v2
+                          with:
+                                  path: ${{ steps.cabal-setup-haskell.outputs.cabal-store }}
+                                  key: ${{ runner.os }}-cabal-${{ hashFiles('cabal.project.freeze') }}
+                                  restore-keys: |
+                                          ${{ runner.os }}-cabal-
                         - name: Prepare haskell environment
                           run: | 
                                   sudo rm ~/.cabal/config
