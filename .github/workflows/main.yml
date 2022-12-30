@@ -56,4 +56,5 @@ jobs:
                                   git pull github master
                                   git add --all
                                   git commit -m "Built by Github Action (build ${GITHUB_RUN_ID}_${GITHUB_RUN_NUMBER})"
+                                  git --no-pager branch -a
                                   git push github master:master
