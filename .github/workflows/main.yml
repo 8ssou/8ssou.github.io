@@ -54,8 +54,11 @@ jobs:
                                   export REMOTE=$(git config remote.origin.url | sed 's/.*:\/\///')
                                   git remote add github https://${{secrets.GITHUB_TOKEN}}@${REMOTE}
                                   git pull github master
-                                  git checkout github/master
+                                  git checkout latest-source
+                                  git --no-pager branch -a
                                   git add --all
                                   git commit -m "Built by Github Action (build ${GITHUB_RUN_ID}_${GITHUB_RUN_NUMBER})"
                                   git --no-pager branch -a
+                                  git checkout master
+                                  git merge latest-source
                                   git push github master:master
